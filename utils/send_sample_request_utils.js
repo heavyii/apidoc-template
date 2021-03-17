@@ -3,7 +3,7 @@ if (typeof define !== 'function') {
     var define = require('amdefine')(module)
 }
 
-define(['lodash'], function (_) {
+define(['lodash', './signature.js'], function (_, GenSign) {
 
     var log = console;
 
@@ -68,6 +68,9 @@ define(['lodash'], function (_) {
     function handleNestedAndParsingFields(param, paramType) {
         var result = handleArraysAndObjectFields(param, paramType);
         result = handleNestedFieldsForAllParams(result, paramType);
+
+        // 计算签名
+        GenSign.genSignagure(result);
         return result;
     }
 

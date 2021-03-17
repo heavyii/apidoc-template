@@ -163,6 +163,19 @@ define([
         $.ajax(ajaxRequest);
 
 
+        function ajaxResopnseProcess(jsonResponse) {
+            try {
+                
+                jsonResponse = JSON.parse(jsonResponse);
+                if (jsonResponse.code == 0 && jsonResponse.data && jsonResponse.data.key) {
+                    window.key = jsonResponse.data.key;
+                    console.log('#### set window.key', window.key);
+                }
+            } catch (e) {
+                // ignore
+            }
+        }
+
         function displaySuccess(data, status, jqXHR) {
             var jsonResponse;
             try {
@@ -172,6 +185,7 @@ define([
                 jsonResponse = jqXHR.responseText;
             }
             $root.find(".sample-request-response-json").text(jsonResponse);
+            ajaxResopnseProcess(jsonResponse)
             refreshScrollSpy();
         };
 
