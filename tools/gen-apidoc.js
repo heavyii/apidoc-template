@@ -14,7 +14,7 @@ const option = {
     src: 'app',
     dest: 'app/public/apidoc',
     excludeFilters: ['app/public'],
-    markdown: path.resolve(__dirname, 'tools/markitdown.js'),
+    markdown: path.resolve(__dirname, 'markitdown.js'),
     template: path.resolve(__dirname, '/..')
     // debug: true
   };
