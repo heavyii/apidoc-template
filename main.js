@@ -65,7 +65,7 @@ require([
             init($, _, locale, Handlebars, apiProject, apiData, Prism, sampleRequest, semver);
         },
         google: {
-            families: ['Source Code Pro', 'Source Sans Pro:n4,n6,n7']
+            families: ['']
         }
     });
 });
@@ -664,6 +664,12 @@ function init($, _, locale, Handlebars, apiProject, apiData, Prism, sampleReques
       ;
       endpointsList.search();
     });
+
+    /**
+     * 
+     * init mermaid
+     */
+     mermaid && mermaid.init();
 
     /**
      * Change version of an article to compare it to an other version.
