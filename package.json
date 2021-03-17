@@ -1,0 +1,26 @@
+{
+  "name": "@heavy/apidoc-template",
+  "version": "2.0.5",
+  "description": "apidoc template with signature and mermaid",
+  "main": "main.js",
+  "bin": {
+    "obj2glb": "tools/gen-apidoc.js"
+  },
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heavyii/apidoc-template.git"
+  },
+  "keywords": [
+    "apidoc",
+    "template"
+  ],
+  "author": "heavy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heavyii/apidoc-template/issues"
+  },
+  "homepage": "https://github.com/heavyii/apidoc-template#readme"
+}
