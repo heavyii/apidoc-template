@@ -1,5 +1,6 @@
-var Markdown = require('markdown-it');
-const markdownItMermaidPro = require("markdown-it-mermaid-less");
+const Markdown = require('markdown-it');
+const markdownItMermaid = require("markdown-it-mermaid-plugin");
+
 
 {/* 
 // write this to html
@@ -26,7 +27,14 @@ function CustomMarkdownParser() {
         linkify    : true,
         typographer: false
     });
-    this.markdownParser.use(markdownItMermaidPro, { debug: true });
+    this.markdownParser.use(markdownItMermaid, { 
+      startOnLoad: false,
+      securityLevel: true,
+      theme: "default",
+      flowchart:{
+        htmlLabels: false,
+        useMaxWidth: true,
+      } });
 }
 
 CustomMarkdownParser.prototype.render = function(text) {
